@@ -25,7 +25,7 @@ pipeline {
 	      branch 'release'
 	   }
            steps {
-              sh "scp -i C:\Users\ADMIN/.ssh/id_rsa -o 'StrictHostKeyChecking no' -r sbdl.zip log4j.properties sbdl_main.py sbdl_submit.sh conf AakashPatania@192.168.29.191:D:\Apache Spark Application\SBDL workspace\sbdl-qa"
+              sh "scp -i C:\Users\ADMIN/.ssh/id_rsa -o 'StrictHostKeyChecking no' -r sbdl.zip log4j.properties sbdl_main.py sbdl_submit.sh conf AakashPatania@:D:\Apache Spark Application\SBDL workspace\sbdl-qa"
            }
         }
 	stage('Deploy') {
@@ -33,7 +33,7 @@ pipeline {
 	      branch 'master'
 	   }
            steps {
-               sh "scp -i C:\Users\ADMIN/.ssh/id_rsa -o 'StrictHostKeyChecking no' -r sbdl.zip log4j.properties sbdl_main.py sbdl_submit.sh conf AakashPatania@192.168.29.191 D:\Apache Spark Application\SBDL workspace\sbdl-prod"
+               sh "scp -i C:\Users\ADMIN/.ssh/id_rsa -o 'StrictHostKeyChecking no' -r sbdl.zip log4j.properties sbdl_main.py sbdl_submit.sh conf AakashPatania@ D:\Apache Spark Application\SBDL workspace\sbdl-prod"
            }
         }
     }
